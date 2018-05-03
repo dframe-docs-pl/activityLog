@@ -99,16 +99,16 @@ Teraz spróbujmy dodać log z jakimiś parametrami. Jednak by rozpocząc musimy 
 
 Powyższy interpterer pozwala nam na logowanie 3 parametrów id, firstname oraz lastname. Jest to ważne głównie dla odczytu jeśli chcemy logować więcej informacji poprostu dopisujemy kolejne parametry.
  
- .. code-block:: php
+.. code-block:: php
  
-  $before = array(
-      'firstname' => 'Before Change'
-  );
+ $before = array(
+     'firstname' => 'Before Change'
+ );
   
-  $after = array(
-      'firstname' => 'After Change'
-  );
+ $after = array(
+     'firstname' => 'After Change'
+ );
   
-  $dataId = '1';
-  $this->activity->log('Update Data')->entity('\Libs\Extensions\ActivityLog\Change', array($before, $after))->on('data.id', $dataId)->push();
+ $dataId = '1';
+ $this->activity->log('Update Data')->entity('\Libs\Extensions\ActivityLog\Change', array($before, $after))->on('data.id', $dataId)->push();
 

@@ -1,7 +1,12 @@
+.. title:: ActivityLog - Prosty system do obsługi logów z systemem templatek
+
+.. meta::
+    :description: Najprostszy log jest akcji, nie przyjmuje on żadnych parametrów, jedynie informacje w poniższym przykładnie ze użytkownik odświeżył stronę. 
+    :keywords: dframe, log, psr3, logger, log system
+
 Proste Logi
 ====
-
-Najprostszy log jest akcji, nie przyjmuje on żadnych parametrów, jedynie informacje w poniższym przykładnie ze użytkownik odświeżył stronę. 
+Prosty system do obsługi logów z systemem templatek. Najprostszy log jest akcji, nie przyjmuje on żadnych parametrów, jedynie informacje w poniższym przykładnie ze użytkownik odświeżył stronę. 
 
 
 Instalacja

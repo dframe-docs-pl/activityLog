@@ -1,5 +1,16 @@
+Instalacja
+----------
+
+Z poziomu konsoli bash wykonaj polecenie composera*
+
+.. code-block:: bash
+
+ $ composer require dframe/activitylog
+
+Albo pobierz ręcznie https://github.com/dframe/activityLog/releases
+
 Zapisywanie Logów
-^^^^^^^^^^
+----------
 
 Logi aktywności w systemie mogą być dowolnie użyte. Dane jakie mogą zapisywać ogranicza się tylko do wyobraźni. Dzięki możliwości typowania logów można do w łatwy sposób napisać interpreter który będzie je odczytywał w określony przez nas sposób. 
 Poniżej znajduje się przykłąd użycia.

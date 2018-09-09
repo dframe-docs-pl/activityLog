@@ -9,7 +9,7 @@ Proste Logi
 Prosty system do obsługi logów z systemem templatek. Najprostszy log jest akcji, nie przyjmuje on żadnych parametrów, jedynie informacje w poniższym przykładnie ze użytkownik odświeżył stronę. 
 
 
-Usage example
+Przykład użycia
 ====
 .. code-block:: php
 

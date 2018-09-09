@@ -24,5 +24,5 @@ W miejscu którym mają być używane należy zdefiniować. W naszym przypadku z
          $this->activity = new Activity($this->loadModel('ActivityLog/Drivers/Log'), $this->baseClass->session->get('id', 0));
      }
  
-Pierwszy parametr odpowiada za połączenie w przykładzie z Mysql który powinnyśmy umieścić w folderze Modelu kod znajdziecie tutaj https://github.com/dframe/activityLog/blob/master/example/app/Model/ActivityLog/Drivers/Log.php
-Jako $loggedId użyjemy id użytkownika 
+Pierwszy parametr odpowiada za połączenie w przykładzie z Mysql który powinnyśmy umieścić w folderze naszego projektu. Kod znajdziecie tutaj https://github.com/dframe/activityLog/tree/master/demo/app/Drivers
+Jako $loggedId użyjemy np id użytkownika 

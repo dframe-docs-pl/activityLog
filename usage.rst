@@ -9,18 +9,6 @@ Proste Logi
 Prosty system do obsługi logów z systemem templatek. Najprostszy log jest akcji, nie przyjmuje on żadnych parametrów, jedynie informacje w poniższym przykładnie ze użytkownik odświeżył stronę. 
 
 
-Instalacja
-----------
-
-Z poziomu konsoli bash wykonaj polecenie composera*
-
-.. code-block:: bash
-
- $ composer require dframe/activitylog
-
-Albo pobierz ręcznie https://github.com/dframe/activityLog/releases
-
-
 Usage example
 ====
 .. code-block:: php

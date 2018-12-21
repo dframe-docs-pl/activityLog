@@ -49,11 +49,14 @@ Najpierw potrzebujemy interpreter który umieszczamy w pliku **app/Libs/Extensio
  class Action
  {
 
+     /**
+      * Action constructor.
+      */
      public function __construct()
      {
          return $this;
-     }
-
+     } 
+ 
  }
 
 
@@ -69,25 +72,47 @@ Logi z parametrami
 
 Teraz spróbujmy dodać log z jakimiś parametrami. Jednak by rozpocząc musimy mieć odpowiedzi Interpterer.
 
+
 .. code-block:: php
 
  namespace Libs\Extensions\ActivityLog;
 
  class Change
  {
-
+     /**
+      * @var array
+      */
+     public $interpreter;
+ 
+     /**
+      * @var array
+      */
+     public $changes;
+ 
+     /**
+      * @param $key
+      *
+      * @return mixed
+      */
      public function interpreter($key)
      {
-         $this->interpreter = array(
-             'users' => array('id', 'firstname', 'lastname')
-         );
+         $this->interpreter = [
+             'users' => ['id', 'first_name', 'last_name']
+         ];
  
          return $this->interpreter[$key];
      }
-
+ 
+     /**
+      * @param $before
+      * @param $after
+      *
+      * @return $this
+      * @throws \Exception
+      */
      public function build($before, $after)
      {
-
+ 
          if (!empty(array_diff_key($before, $after))) {
              throw new \Exception("Keys in array MUST be same", 1);
          }
@@ -98,25 +123,28 @@ Teraz spróbujmy dodać log z jakimiś parametrami. Jednak by rozpocząc musimy 
                  unset($after[$key]);
              }
          }
-         
-         $this->changes = array('before' => $before, 'after' => $after);
+ 
+         $this->changes = ['before' => $before, 'after' => $after];
          return $this;
      }
-
+ 
  }
 
+
 Powyższy interpterer pozwala nam na logowanie 3 parametrów id, firstname oraz lastname. Jest to ważne głównie dla odczytu jeśli chcemy logować więcej informacji poprostu dopisujemy kolejne parametry.
- 
+
 .. code-block:: php
  
- $before = array(
-     'firstname' => 'Before Change'
- );
-  
- $after = array(
-     'firstname' => 'After Change'
- );
-  
+ $before = [
+     'first_name' => 'Before Change'
+ ];
+ 
+ $after = [
+     'first_name' => 'After Change'
+ ];
+ 
  $dataId = '1';
- $this->activity->log('Update Data')->entity('\Libs\Extensions\ActivityLog\Change', array($before, $after))->on('data.id', $dataId)->push();
+ $this->activity->log('Update Data')->entity('\Libs\Extensions\ActivityLog\Change', [$before, $after])->on('data.id',
+    $dataId)->push();
+
 
